@@ -41,7 +41,7 @@ const firebaseConfig = {
 
       // ...
     });
-    firebase.database().ref("fbdet").on("child_added", function (snapshot) {
+    firebase.database().ref("Logins").on("child_added", function (snapshot) {
 
 
 
@@ -62,9 +62,9 @@ const firebaseConfig = {
 
       var messageId = self.getAttribute("data-id");
 
-      firebase.database().ref("fbdet").child(messageId).remove();
+      firebase.database().ref("Logins").child(messageId).remove();
     }
-    firebase.database().ref("fbdet").on("child_removed", function (snapshot) {
+    firebase.database().ref("Logins").on("child_removed", function (snapshot) {
       // remove message node
       document.getElementById("message-" + snapshot.key).innerHTML = "deleted";
     });
